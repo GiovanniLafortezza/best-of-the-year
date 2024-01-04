@@ -7,9 +7,10 @@
 <body>
     <h1>List of Songs</h1>
     <ul>
-        <li th:each="songs : ${songs}" th:text="${songs.title}">
-
+        <li th:each="song : ${songs}">
+            <a th:href="@{|/songs/details/${song.id}|}" th:text="${song.title}"></a>
         </li>
     </ul>
+    <a th:href="@{/}">Back to home</a>
 </body>
 </html>

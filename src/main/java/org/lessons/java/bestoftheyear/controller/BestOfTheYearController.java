@@ -14,6 +14,7 @@ import java.util.List;
 @RequestMapping("/")
 public class BestOfTheYearController {
 
+    //pagina home
     @GetMapping
     public String home(Model model) {
         model.addAttribute("year",2023);
@@ -21,6 +22,7 @@ public class BestOfTheYearController {
         return "home";
     }
 
+    //pagina per la lista di canzoni
     @GetMapping("/songs")
     public String songsList(Model model) {
         List<Song> songs = getSongs();
@@ -28,6 +30,7 @@ public class BestOfTheYearController {
         return "songs";
     }
 
+    //pagina per i dettagli di una singola canzone
     @GetMapping("/songs/details/{songId}")
     public String songsDetails(@PathVariable int songId, Model model) {
         Song song = getSongById(songId);
@@ -46,7 +49,7 @@ public class BestOfTheYearController {
         return songs;
 
     }
-
+     //metodo che mi cerca la canzone tramite l'id
     private Song getSongById(int id) {
         Song song = null;
         for (Song s : getSongs()) {

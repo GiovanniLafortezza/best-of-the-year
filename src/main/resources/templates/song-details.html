@@ -5,7 +5,8 @@
     <title>Song Detail</title>
 </head>
 <body>
-    <p th:text="${song.title}"></p>
-    <p th:text="${song.author}"></p>
+    <p th:text="${'Title : ' + song.title}"></p>
+    <p th:text="${'Author : ' + song.author}"></p>
+    <a th:href="@{/songs}">back to list</a>
 </body>
 </html>
